@@ -475,7 +475,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Knowledge base for the AI assistant
     const knowledgeBase = {
         experience: "Bhanu Vardhan has 9+ years of professional experience in Salesforce development and architecture. He currently works as a Senior Specialist at AT&T India (Jan 2025 - Present). Previously, he was a Specialist Development Lead at AT&T (Oct 2023 - Dec 2024), Consultant at Deloitte (June 2022 - Oct 2023), Business Technology Analyst at Deloitte (Nov 2020 - May 2022), and System Engineer at Infosys (Apr 2018 - Nov 2020). He started his career as an Intern at Siemens Building Technologies (June 2017 - Jan 2018).",
-        certifications: "Bhanu holds 13 Salesforce certifications: Application Architect, Data Architect, Sharing & Visibility Architect, Identity & Access Mgmt Architect, Integration Architect, Development Lifecycle Designer, Platform App Builder, JavaScript Developer I, Platform Developer II, Platform Developer I, OmniStudio Developer, Agentforce Specialist, and OmniStudio Consultant.",
+        certifications: "Bhanu holds 13 Salesforce certifications: Application Architect, Platform Data Architect, Platform Sharing and Visibility Architect, Platform Identity and Access Management Architect, Platform Integration Architect, Platform Foundations, Platform App Builder, JavaScript Developer, Platform Developer II, Platform Developer (PDI), OmniStudio Developer, Agentforce Specialist, and OmniStudio Consultant.",
         skills: "Bhanu's key skills include: AI & Automation (Agentforce, Einstein Bots, CRM Analytics), Salesforce Architecture (Application Architecture, Data Architecture, Integration Design & Governance), OmniStudio & Vlocity (OmniScripts, FlexCards, Communications Cloud, DataRaptors, Integration Procedures), and Core Development (Apex Programming, Lightning Web Components, JavaScript, Aura Frameworks).",
         achievements: "Bhanu is an Agentblazer Legend (highest tier of the Agentblazer community program) and a Double Star Ranger on Salesforce Trailhead, representing extensive learning across hundreds of modules, projects, and superbadges.",
         projects: "Key projects include: 1) AT&T Agentforce Intelligent Automation — Designed autonomous AI agents using Agentforce for customer service workflows. 2) AT&T Communications Cloud Migration — Led migration of legacy telecom workflows to Salesforce Communications Cloud. 3) Verizon Quote-to-Order CPQ Platform — Built a full CPQ management system using Vlocity and Communities. 4) M1 Mobile Self-Service Subscription Portal — Developed an end-to-end web platform for mobile subscription management using Vlocity, Heroku, and MuleSoft.",
@@ -519,7 +519,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Architecture
         if (q.includes('architect')) {
-            return "Bhanu holds 6 Architect-level Salesforce certifications: Application Architect, Data Architect, Sharing & Visibility Architect, Identity & Access Management Architect, Integration Architect, and Development Lifecycle Designer. He specializes in designing scalable, secure, and high-performance Salesforce architectures.";
+            return "Bhanu holds 5 Architect-level Salesforce certifications: Application Architect, Platform Data Architect, Platform Sharing and Visibility Architect, Platform Identity and Access Management Architect, and Platform Integration Architect. He specializes in designing scalable, secure, and high-performance Salesforce architectures.";
         }
 
         // OmniStudio / Vlocity
