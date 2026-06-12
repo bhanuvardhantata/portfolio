@@ -1789,7 +1789,7 @@ nav a:hover::after {
   bottom: 6.5rem;
   right: 2rem;
   width: 380px;
-  max-height: 520px;
+  max-height: 580px;
   background: var(--bg-primary);
   border: 1px solid var(--border-glass);
   border-radius: 20px;
@@ -1867,7 +1867,7 @@ nav a:hover::after {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  min-height: 280px;
+  min-height: 150px;
   max-height: 340px;
   scrollbar-width: thin;
   scrollbar-color: var(--bg-tertiary) transparent;
@@ -1925,19 +1925,20 @@ nav a:hover::after {
 }
 
 .chatbot-quick-options {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 0.5rem;
   padding: 1rem 1.25rem;
   border-top: 1px solid var(--border-glass);
   background: var(--bg-secondary);
+  flex-shrink: 0;
 }
 
 .quick-opt-btn {
   background: var(--bg-tertiary);
   border: 1px solid var(--border-glass);
-  border-radius: 20px;
-  padding: 0.5rem 0.85rem;
+  border-radius: 12px;
+  padding: 0.55rem 0.75rem;
   color: var(--text-primary);
   font-family: var(--font-body);
   font-size: 0.82rem;
@@ -1946,25 +1947,190 @@ nav a:hover::after {
   transition: var(--transition-smooth);
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.35rem;
   text-decoration: none;
+  text-align: center;
 }
 
-.quick-opt-btn:hover {
+.quick-opt-btn:hover:not(:disabled) {
   background: hsla(207, 95%, 55%, 0.1);
   border-color: var(--accent-salesforce);
   transform: translateY(-1px);
 }
 
+.quick-opt-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 .whatsapp-opt-btn {
+  grid-column: span 2;
   background: hsla(142, 70%, 45%, 0.1);
   border-color: hsla(142, 70%, 45%, 0.3);
   color: #25d366 !important;
+  font-weight: 600;
 }
 
 .whatsapp-opt-btn:hover {
   background: hsla(142, 70%, 45%, 0.2);
   border-color: #25d366;
+}
+
+/* Chatbot Rich Responses Styles */
+.bot-response-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  width: 100%;
+  text-align: left;
+}
+
+.bot-timeline {
+  list-style: none;
+  padding: 0;
+  margin: 0.35rem 0;
+  border-left: 2px solid var(--border-glass);
+  padding-left: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.bot-timeline li {
+  position: relative;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.timeline-date {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  font-weight: 600;
+}
+
+.text-highlight {
+  color: var(--accent-salesforce);
+  font-weight: 600;
+}
+
+.cert-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin: 0.35rem 0;
+}
+
+.cert-group {
+  font-size: 0.85rem;
+}
+
+.cert-group-tags {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  margin-top: 0.1rem;
+}
+
+.skills-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin: 0.35rem 0;
+}
+
+.skill-cat {
+  font-size: 0.85rem;
+}
+
+.skill-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin-top: 0.2rem;
+}
+
+.skill-pill {
+  font-size: 0.72rem;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-glass);
+  color: var(--text-muted);
+  border-radius: 4px;
+  padding: 0.1rem 0.35rem;
+}
+
+.bot-projects, .bot-achievements {
+  margin: 0.35rem 0;
+  padding-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.bot-projects li, .bot-achievements li {
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.bot-whatsapp-cta {
+  margin-top: 0.4rem;
+  border-top: 1px solid var(--border-glass);
+  padding-top: 0.4rem;
+}
+
+.bot-wa-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: #25d366 !important;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+.bot-wa-link:hover {
+  opacity: 0.85;
+  transform: translateX(2px);
+}
+
+.bot-contact-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-top: 0.4rem;
+}
+
+.bot-contact-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: white !important;
+  transition: var(--transition-smooth);
+}
+
+.bot-contact-item.wa {
+  background: #25d366;
+}
+
+.bot-contact-item.email {
+  background: var(--accent-salesforce);
+}
+
+.bot-contact-item.linkedin {
+  background: #0077b5;
+}
+
+.bot-contact-item:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
 }
 
 /* ==========================================
@@ -2307,7 +2473,7 @@ footer {
     left: 0.75rem;
     width: auto;
     bottom: 5.5rem;
-    max-height: 70vh;
+    max-height: 78vh;
   }
 
   .chatbot-fab {

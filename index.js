@@ -470,20 +470,186 @@ document.addEventListener('DOMContentLoaded', () => {
     const chatbotClose = document.getElementById('chatbot-close');
     const chatbotMessages = document.getElementById('chatbot-messages');
 
-    // Knowledge base for the AI assistant
-    const knowledgeBase = {
-        experience: "Bhanu Vardhan has 9+ years of professional experience in Salesforce development and architecture. He currently works as a Senior Specialist at AT&T India (Jan 2025 - Present). Previously, he was a Specialist Development Lead at AT&T (Oct 2023 - Dec 2024), Consultant at Deloitte (June 2022 - Oct 2023), Business Technology Analyst at Deloitte (Nov 2020 - May 2022), and System Engineer at Infosys (Apr 2018 - Nov 2020). He started his career as an Intern at Siemens Building Technologies (June 2017 - Jan 2018).",
-        certifications: "Bhanu holds 13 Salesforce certifications: Application Architect, Platform Data Architect, Platform Sharing and Visibility Architect, Platform Identity and Access Management Architect, Platform Integration Architect, Platform Foundations, Platform App Builder, JavaScript Developer, Platform Developer II, Platform Developer (PDI), OmniStudio Developer, Agentforce Specialist, and OmniStudio Consultant.",
-        skills: "Bhanu's key skills include: AI & Automation (Agentforce, Einstein Bots, CRM Analytics), Salesforce Architecture (Application Architecture, Data Architecture, Integration Design & Governance), OmniStudio & Vlocity (OmniScripts, FlexCards, Communications Cloud, DataRaptors, Integration Procedures), and Core Development (Apex Programming, Lightning Web Components, JavaScript, Aura Frameworks).",
-        achievements: "Bhanu is an Agentblazer Legend (highest tier of the Agentblazer community program) and a Double Star Ranger on Salesforce Trailhead, representing extensive learning across hundreds of modules, projects, and superbadges.",
-        projects: "Key projects include: 1) AT&T Agentforce Intelligent Automation — Designed autonomous AI agents using Agentforce for customer service workflows. 2) AT&T Communications Cloud Migration — Led migration of legacy telecom workflows to Salesforce Communications Cloud. 3) Verizon Quote-to-Order CPQ Platform — Built a full CPQ management system using Vlocity and Communities. 4) M1 Mobile Self-Service Subscription Portal — Developed an end-to-end web platform for mobile subscription management using Vlocity, Heroku, and MuleSoft.",
-        contact: "You can reach Bhanu via email at bhanu0957@gmail.com, on LinkedIn at linkedin.com/in/bhanu-vardhan-ba04b8a9, on Salesforce Trailblazer at salesforce.com/trailblazer/bvardhan, or chat directly via WhatsApp at +91 95333 94003. He is based in Hyderabad, India."
+    // HTML formatted responses helper
+    const formatBotResponse = (topic) => {
+        if (topic === 'experience') {
+            return `
+                <div class="bot-response-content">
+                    <p><strong>Bhanu's Journey (9+ Years):</strong></p>
+                    <ul class="bot-timeline">
+                        <li>
+                            <span class="timeline-date">2025 - Present</span>
+                            <strong>Senior Specialist</strong> at <span class="text-highlight">AT&T India</span>
+                        </li>
+                        <li>
+                            <span class="timeline-date">2023 - 2024</span>
+                            <strong>Specialist Dev Lead</strong> at <span class="text-highlight">AT&T</span>
+                        </li>
+                        <li>
+                            <span class="timeline-date">2022 - 2023</span>
+                            <strong>Consultant</strong> at <span class="text-highlight">Deloitte</span>
+                        </li>
+                        <li>
+                            <span class="timeline-date">2020 - 2022</span>
+                            <strong>Business Tech Analyst</strong> at <span class="text-highlight">Deloitte</span>
+                        </li>
+                        <li>
+                            <span class="timeline-date">2018 - 2020</span>
+                            <strong>System Engineer</strong> at <span class="text-highlight">Infosys</span>
+                        </li>
+                    </ul>
+                    <div class="bot-whatsapp-cta">
+                        <a href="https://wa.me/919533394003" target="_blank" class="bot-wa-link">
+                            <i class="fa-brands fa-whatsapp"></i> Ask about this on WhatsApp
+                        </a>
+                    </div>
+                </div>
+            `;
+        }
+        if (topic === 'certifications') {
+            return `
+                <div class="bot-response-content">
+                    <p><strong>13x Salesforce Certified:</strong></p>
+                    <div class="cert-groups">
+                        <div class="cert-group">
+                            <strong>Architect (5x):</strong>
+                            <p class="cert-group-tags">Application Architect, Platform Data Architect, Platform Sharing & Visibility, Identity & Access Management, Integration Architect</p>
+                        </div>
+                        <div class="cert-group">
+                            <strong>Core Developer (5x):</strong>
+                            <p class="cert-group-tags">Platform Developer II, Platform Developer I, JavaScript Developer, Platform App Builder, Platform Foundations</p>
+                        </div>
+                        <div class="cert-group">
+                            <strong>AI & Specialized (3x):</strong>
+                            <p class="cert-group-tags">Agentforce Specialist, OmniStudio Developer, OmniStudio Consultant</p>
+                        </div>
+                    </div>
+                    <div class="bot-whatsapp-cta">
+                        <a href="https://wa.me/919533394003" target="_blank" class="bot-wa-link">
+                            <i class="fa-brands fa-whatsapp"></i> Chat about my credentials
+                        </a>
+                    </div>
+                </div>
+            `;
+        }
+        if (topic === 'skills') {
+            return `
+                <div class="bot-response-content">
+                    <p><strong>Core Competencies:</strong></p>
+                    <div class="skills-categories">
+                        <div class="skill-cat">
+                            <strong>AI & Automation:</strong>
+                            <div class="skill-pills">
+                                <span class="skill-pill">Agentforce</span>
+                                <span class="skill-pill">Einstein Bots</span>
+                                <span class="skill-pill">CRM Analytics</span>
+                            </div>
+                        </div>
+                        <div class="skill-cat">
+                            <strong>Architecture:</strong>
+                            <div class="skill-pills">
+                                <span class="skill-pill">Data Modeling</span>
+                                <span class="skill-pill">SSO / Identity</span>
+                                <span class="skill-pill">Integration</span>
+                            </div>
+                        </div>
+                        <div class="skill-cat">
+                            <strong>OmniStudio & Vlocity:</strong>
+                            <div class="skill-pills">
+                                <span class="skill-pill">OmniScripts</span>
+                                <span class="skill-pill">FlexCards</span>
+                                <span class="skill-pill">DataRaptors</span>
+                                <span class="skill-pill">Integration Procedures</span>
+                            </div>
+                        </div>
+                        <div class="skill-cat">
+                            <strong>Core Dev:</strong>
+                            <div class="skill-pills">
+                                <span class="skill-pill">LWC</span>
+                                <span class="skill-pill">Apex</span>
+                                <span class="skill-pill">JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bot-whatsapp-cta">
+                        <a href="https://wa.me/919533394003" target="_blank" class="bot-wa-link">
+                            <i class="fa-brands fa-whatsapp"></i> Discuss project needs
+                        </a>
+                    </div>
+                </div>
+            `;
+        }
+        if (topic === 'projects') {
+            return `
+                <div class="bot-response-content">
+                    <p><strong>Featured Case Studies:</strong></p>
+                    <ul class="bot-projects">
+                        <li>
+                            <strong>AT&T:</strong> Agentforce Automation (AI Service Agents)
+                        </li>
+                        <li>
+                            <strong>AT&T:</strong> OmniStudio Migration (Legacy code to Vlocity)
+                        </li>
+                        <li>
+                            <strong>Verizon:</strong> CPQ Portal (Vlocity CPQ & Communities)
+                        </li>
+                        <li>
+                            <strong>M1 Mobile:</strong> Self-Service Portal (Vlocity / MuleSoft)
+                        </li>
+                    </ul>
+                    <div class="bot-whatsapp-cta">
+                        <a href="https://wa.me/919533394003" target="_blank" class="bot-wa-link">
+                            <i class="fa-brands fa-whatsapp"></i> Chat about project details
+                        </a>
+                    </div>
+                </div>
+            `;
+        }
+        if (topic === 'achievements') {
+            return `
+                <div class="bot-response-content">
+                    <p><strong>Community Achievements:</strong></p>
+                    <ul class="bot-achievements">
+                        <li><strong>Agentforce Legend:</strong> Top tier in Salesforce's Agentblazer program.</li>
+                        <li><strong>Double Star Ranger:</strong> 200+ badges and 130,000+ points on Trailhead.</li>
+                    </ul>
+                    <div class="bot-whatsapp-cta">
+                        <a href="https://wa.me/919533394003" target="_blank" class="bot-wa-link">
+                            <i class="fa-brands fa-whatsapp"></i> Connect on WhatsApp
+                        </a>
+                    </div>
+                </div>
+            `;
+        }
+        if (topic === 'contact') {
+            return `
+                <div class="bot-response-content">
+                    <p><strong>Let's Connect Directly:</strong></p>
+                    <div class="bot-contact-methods">
+                        <a href="https://wa.me/919533394003" target="_blank" class="bot-contact-item wa">
+                            <i class="fa-brands fa-whatsapp"></i> Message on WhatsApp
+                        </a>
+                        <a href="mailto:bhanu0957@gmail.com" class="bot-contact-item email">
+                            <i class="fa-solid fa-envelope"></i> Send an Email
+                        </a>
+                        <a href="https://www.linkedin.com/in/bhanu-vardhan-ba04b8a9" target="_blank" class="bot-contact-item linkedin">
+                            <i class="fa-brands fa-linkedin-in"></i> Connect on LinkedIn
+                        </a>
+                    </div>
+                </div>
+            `;
+        }
+        return "I don't have information on that topic.";
     };
 
-    const addMessage = (text, isUser = false) => {
+    const addMessage = (textOrHtml, isUser = false, isHtml = false) => {
         const msgEl = document.createElement('div');
         msgEl.classList.add('chat-message', isUser ? 'user' : 'bot');
-        msgEl.textContent = text;
+        if (isHtml) {
+            msgEl.innerHTML = textOrHtml;
+        } else {
+            msgEl.textContent = textOrHtml;
+        }
         chatbotMessages.appendChild(msgEl);
         chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
     };
@@ -519,8 +685,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const delay = 500 + Math.random() * 400;
         setTimeout(() => {
             removeTyping();
-            let response = knowledgeBase[topic] || "I don't have information on that topic.";
-            addMessage(response);
+            const responseHtml = formatBotResponse(topic);
+            addMessage(responseHtml, false, true);
             
             // Re-enable options
             buttons.forEach(b => b.disabled = false);
