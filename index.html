@@ -143,6 +143,8 @@
                         <a href="https://www.salesforce.com/trailblazer/bvardhan" target="_blank"
                             aria-label="Trailblazer Profile" id="social-trailblazer"><i
                                 class="fa-brands fa-salesforce"></i></a>
+                        <a href="https://wa.me/919533394003" target="_blank"
+                            aria-label="Chat on WhatsApp" id="social-whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
                         <a href="mailto:bhanu0957@gmail.com" aria-label="Send Email" id="social-email"><i
                                 class="fa-solid fa-envelope"></i></a>
                     </div>
@@ -945,6 +947,15 @@
                             </div>
                         </div>
 
+                        <div class="contact-card" id="contact-whatsapp-card">
+                            <div class="contact-icon" aria-hidden="true"><i class="fa-brands fa-whatsapp"></i></div>
+                            <div class="contact-details">
+                                <h4>WhatsApp</h4>
+                                <p><a href="https://wa.me/919533394003" target="_blank"
+                                        id="contact-whatsapp-link">+91 95333 94003</a></p>
+                            </div>
+                        </div>
+
                         <div class="contact-card" id="contact-trailblazer-card">
                             <div class="contact-icon" aria-hidden="true"><i class="fa-brands fa-salesforce"></i></div>
                             <div class="contact-details">
@@ -1021,6 +1032,8 @@
                     aria-label="LinkedIn Profile" id="footer-linkedin"><i class="fa-brands fa-linkedin"></i></a>
                 <a href="https://www.salesforce.com/trailblazer/bvardhan" target="_blank"
                     aria-label="Trailblazer Profile" id="footer-trailblazer"><i class="fa-brands fa-salesforce"></i></a>
+                <a href="https://wa.me/919533394003" target="_blank"
+                    aria-label="Chat on WhatsApp" id="footer-whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
                 <a href="mailto:bhanu0957@gmail.com" aria-label="Send Email" id="footer-email"><i
                         class="fa-solid fa-envelope"></i></a>
             </div>
@@ -1035,28 +1048,30 @@
         <i class="fa-solid fa-comments"></i>
     </button>
 
-    <div class="chatbot-panel" id="chatbot-panel" role="dialog" aria-label="Ask me anything about Bhanu Vardhan">
+    <div class="chatbot-panel" id="chatbot-panel" role="dialog" aria-label="Know Bhanu - Interactive Info Hub">
         <div class="chatbot-header">
-            <div class="chatbot-header-avatar" aria-hidden="true"><i class="fa-solid fa-robot"></i></div>
+            <div class="chatbot-header-avatar" aria-hidden="true"><i class="fa-solid fa-circle-info"></i></div>
             <div class="chatbot-header-info">
-                <h4>Ask Bhanu's AI</h4>
-                <p>● Online</p>
+                <h4>Know Bhanu</h4>
+                <p>● Interactive Guide</p>
             </div>
-            <button class="chatbot-close" id="chatbot-close" aria-label="Close chat panel">
+            <button class="chatbot-close" id="chatbot-close" aria-label="Close panel">
                 <i class="fa-solid fa-xmark"></i>
             </button>
         </div>
         <div class="chatbot-messages" id="chatbot-messages" aria-live="polite">
             <div class="chat-message bot">
-                👋 Hi! I'm Bhanu's AI assistant. Ask me anything about his experience, certifications, skills, or projects!
+                👋 Hello! Welcome to my interactive guide. Choose a topic below to explore my background, certifications, and projects, or chat directly on WhatsApp!
             </div>
         </div>
-        <div class="chatbot-input-area">
-            <input type="text" class="chatbot-input" id="chatbot-input" placeholder="Ask about Bhanu's experience..."
-                aria-label="Type your question">
-            <button class="chatbot-send" id="chatbot-send" aria-label="Send message">
-                <i class="fa-solid fa-paper-plane"></i>
-            </button>
+        <div class="chatbot-quick-options" id="chatbot-quick-options">
+            <button class="quick-opt-btn" data-topic="experience">💼 Work Experience</button>
+            <button class="quick-opt-btn" data-topic="certifications">🏆 13x Certifications</button>
+            <button class="quick-opt-btn" data-topic="skills">🛠️ Core Skills</button>
+            <button class="quick-opt-btn" data-topic="projects">🧩 Featured Projects</button>
+            <button class="quick-opt-btn" data-topic="achievements">🏅 Achievements</button>
+            <button class="quick-opt-btn" data-topic="contact">✉️ Contact Info</button>
+            <a href="https://wa.me/919533394003" target="_blank" class="quick-opt-btn whatsapp-opt-btn"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a>
         </div>
     </div>
 

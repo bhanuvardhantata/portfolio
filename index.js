@@ -468,8 +468,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const chatbotFab = document.getElementById('chatbot-fab');
     const chatbotPanel = document.getElementById('chatbot-panel');
     const chatbotClose = document.getElementById('chatbot-close');
-    const chatbotInput = document.getElementById('chatbot-input');
-    const chatbotSend = document.getElementById('chatbot-send');
     const chatbotMessages = document.getElementById('chatbot-messages');
 
     // Knowledge base for the AI assistant
@@ -479,91 +477,7 @@ document.addEventListener('DOMContentLoaded', () => {
         skills: "Bhanu's key skills include: AI & Automation (Agentforce, Einstein Bots, CRM Analytics), Salesforce Architecture (Application Architecture, Data Architecture, Integration Design & Governance), OmniStudio & Vlocity (OmniScripts, FlexCards, Communications Cloud, DataRaptors, Integration Procedures), and Core Development (Apex Programming, Lightning Web Components, JavaScript, Aura Frameworks).",
         achievements: "Bhanu is an Agentblazer Legend (highest tier of the Agentblazer community program) and a Double Star Ranger on Salesforce Trailhead, representing extensive learning across hundreds of modules, projects, and superbadges.",
         projects: "Key projects include: 1) AT&T Agentforce Intelligent Automation — Designed autonomous AI agents using Agentforce for customer service workflows. 2) AT&T Communications Cloud Migration — Led migration of legacy telecom workflows to Salesforce Communications Cloud. 3) Verizon Quote-to-Order CPQ Platform — Built a full CPQ management system using Vlocity and Communities. 4) M1 Mobile Self-Service Subscription Portal — Developed an end-to-end web platform for mobile subscription management using Vlocity, Heroku, and MuleSoft.",
-        education: "Bhanu holds a B.Tech degree from Andhra University (2017) with 88.2%.",
-        contact: "You can reach Bhanu via email at bhanu0957@gmail.com, on LinkedIn at linkedin.com/in/bhanu-vardhan-ba04b8a9, or on Salesforce Trailblazer at salesforce.com/trailblazer/bvardhan. He is based in Hyderabad, Telangana, India.",
-        current_role: "Bhanu currently works as a Senior Specialist at AT&T India, leading critical engineering implementations focusing on Agentforce, Einstein Bots, and deep Salesforce integration."
-    };
-
-    const findBestResponse = (question) => {
-        const q = question.toLowerCase();
-        
-        // Greeting patterns
-        if (/^(hi|hello|hey|howdy|greetings)/.test(q)) {
-            return "Hello! 👋 I'm Bhanu's AI assistant. I can tell you about his experience, certifications, skills, projects, and more. What would you like to know?";
-        }
-
-        // Experience questions
-        if (q.includes('experience') || q.includes('years') || q.includes('work') || q.includes('career') || q.includes('job') || q.includes('role')) {
-            return knowledgeBase.experience;
-        }
-
-        // Current role
-        if (q.includes('current') || q.includes('now') || q.includes('present') || q.includes('at&t') || q.includes('att')) {
-            return knowledgeBase.current_role;
-        }
-
-        // Certifications
-        if (q.includes('certif') || q.includes('cert') || q.includes('credential') || q.includes('qualified') || q.includes('13x') || q.includes('13 ')) {
-            return knowledgeBase.certifications;
-        }
-
-        // Skills
-        if (q.includes('skill') || q.includes('tech') || q.includes('expert') || q.includes('stack') || q.includes('know') || q.includes('speciali')) {
-            return knowledgeBase.skills;
-        }
-
-        // Agentforce specific
-        if (q.includes('agentforce') || q.includes('agent') || q.includes('ai') || q.includes('bot') || q.includes('einstein')) {
-            return "Bhanu is an Agentforce Legend — the highest tier of Salesforce's Agentblazer community program. He specializes in building and deploying autonomous AI agents using Agentforce and Einstein Bots, with expertise in designing intelligent conversational experiences and automation workflows. He's also a certified Agentforce Specialist.";
-        }
-
-        // Architecture
-        if (q.includes('architect')) {
-            return "Bhanu holds 5 Architect-level Salesforce certifications: Application Architect, Platform Data Architect, Platform Sharing and Visibility Architect, Platform Identity and Access Management Architect, and Platform Integration Architect. He specializes in designing scalable, secure, and high-performance Salesforce architectures.";
-        }
-
-        // OmniStudio / Vlocity
-        if (q.includes('omni') || q.includes('vlocity') || q.includes('flexcard') || q.includes('datarapter') || q.includes('communications cloud')) {
-            return "Bhanu is an expert in OmniStudio (Vlocity) development, holding both OmniStudio Developer and OmniStudio Consultant certifications. His specialties include OmniScripts, FlexCards, DataRaptors, Integration Procedures, and Salesforce Communications Cloud. He led the migration of 200+ legacy workflows to OmniStudio at AT&T.";
-        }
-
-        // Projects
-        if (q.includes('project') || q.includes('case stud') || q.includes('portfolio') || q.includes('deliver')) {
-            return knowledgeBase.projects;
-        }
-
-        // Achievements
-        if (q.includes('achieve') || q.includes('award') || q.includes('badge') || q.includes('trailblazer') || q.includes('ranger') || q.includes('legend')) {
-            return knowledgeBase.achievements;
-        }
-
-        // Education
-        if (q.includes('education') || q.includes('degree') || q.includes('university') || q.includes('college') || q.includes('study') || q.includes('studied')) {
-            return knowledgeBase.education;
-        }
-
-        // Contact
-        if (q.includes('contact') || q.includes('email') || q.includes('reach') || q.includes('hire') || q.includes('connect') || q.includes('linkedin')) {
-            return knowledgeBase.contact;
-        }
-
-        // Location
-        if (q.includes('location') || q.includes('where') || q.includes('city') || q.includes('based') || q.includes('live')) {
-            return "Bhanu is based in Hyderabad, Telangana, India. He has previously worked in Pune, India during his time at Infosys and Siemens.";
-        }
-
-        // Resume
-        if (q.includes('resume') || q.includes('cv') || q.includes('download')) {
-            return "Bhanu's resume is currently being updated and is not available for download directly at the moment. Please feel free to ask me about his experience, certifications, skills, or projects, or connect with him on LinkedIn!";
-        }
-
-        // Thank you
-        if (q.includes('thank') || q.includes('thanks')) {
-            return "You're welcome! 😊 If you have any other questions about Bhanu's experience or skills, feel free to ask!";
-        }
-
-        // Fallback
-        return "Great question! I can help with information about Bhanu's experience, certifications (13x Salesforce certified), skills (Agentforce, OmniStudio, Architecture, LWC, Apex), projects, achievements, education, or contact details. What specifically would you like to know?";
+        contact: "You can reach Bhanu via email at bhanu0957@gmail.com, on LinkedIn at linkedin.com/in/bhanu-vardhan-ba04b8a9, on Salesforce Trailblazer at salesforce.com/trailblazer/bvardhan, or chat directly via WhatsApp at +91 95333 94003. He is based in Hyderabad, India."
     };
 
     const addMessage = (text, isUser = false) => {
@@ -588,22 +502,28 @@ document.addEventListener('DOMContentLoaded', () => {
         if (typingEl) typingEl.remove();
     };
 
-    const handleChatSend = () => {
-        const question = chatbotInput.value.trim();
-        if (!question) return;
+    const handleQuickOptionClick = (btn) => {
+        const topic = btn.getAttribute('data-topic');
+        if (!topic) return;
 
-        addMessage(question, true);
-        chatbotInput.value = '';
-        
-        // Show typing indicator
+        const questionText = btn.textContent.trim();
+        addMessage(questionText, true);
+
+        // Disable options during typing to prevent double clicks
+        const buttons = document.querySelectorAll('.quick-opt-btn:not(.whatsapp-opt-btn)');
+        buttons.forEach(b => b.disabled = true);
+
         showTyping();
 
         // Simulate AI thinking delay
-        const delay = 800 + Math.random() * 800;
+        const delay = 500 + Math.random() * 400;
         setTimeout(() => {
             removeTyping();
-            const response = findBestResponse(question);
+            let response = knowledgeBase[topic] || "I don't have information on that topic.";
             addMessage(response);
+            
+            // Re-enable options
+            buttons.forEach(b => b.disabled = false);
         }, delay);
     };
 
@@ -613,9 +533,6 @@ document.addEventListener('DOMContentLoaded', () => {
             chatbotFab.innerHTML = isOpen 
                 ? '<i class="fa-solid fa-xmark"></i>' 
                 : '<i class="fa-solid fa-comments"></i>';
-            if (isOpen) {
-                chatbotInput.focus();
-            }
         });
 
         chatbotClose.addEventListener('click', () => {
@@ -623,13 +540,10 @@ document.addEventListener('DOMContentLoaded', () => {
             chatbotFab.innerHTML = '<i class="fa-solid fa-comments"></i>';
         });
 
-        chatbotSend.addEventListener('click', handleChatSend);
-
-        chatbotInput.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                handleChatSend();
-            }
+        // Add event listeners to quick action buttons
+        const quickOptionBtns = document.querySelectorAll('.quick-opt-btn:not(.whatsapp-opt-btn)');
+        quickOptionBtns.forEach(btn => {
+            btn.addEventListener('click', () => handleQuickOptionClick(btn));
         });
     }
 });

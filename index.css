@@ -1924,54 +1924,47 @@ nav a:hover::after {
   30% { transform: translateY(-6px); opacity: 1; }
 }
 
-.chatbot-input-area {
+.chatbot-quick-options {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
   gap: 0.5rem;
   padding: 1rem 1.25rem;
   border-top: 1px solid var(--border-glass);
   background: var(--bg-secondary);
 }
 
-.chatbot-input {
-  flex: 1;
+.quick-opt-btn {
   background: var(--bg-tertiary);
   border: 1px solid var(--border-glass);
-  border-radius: 50px;
-  padding: 0.65rem 1rem;
+  border-radius: 20px;
+  padding: 0.5rem 0.85rem;
   color: var(--text-primary);
   font-family: var(--font-body);
-  font-size: 0.88rem;
-  outline: none;
-  transition: var(--transition-smooth);
-}
-
-.chatbot-input:focus {
-  border-color: var(--accent-salesforce);
-}
-
-.chatbot-input::placeholder {
-  color: var(--text-dim);
-}
-
-.chatbot-send {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent-salesforce), var(--accent-agentforce));
-  border: none;
-  color: white;
-  font-size: 0.95rem;
+  font-size: 0.82rem;
+  font-weight: 500;
   cursor: pointer;
+  transition: var(--transition-smooth);
   display: flex;
   align-items: center;
-  justify-content: center;
-  transition: var(--transition-smooth);
-  flex-shrink: 0;
+  gap: 0.35rem;
+  text-decoration: none;
 }
 
-.chatbot-send:hover {
-  transform: scale(1.08);
+.quick-opt-btn:hover {
+  background: hsla(207, 95%, 55%, 0.1);
+  border-color: var(--accent-salesforce);
+  transform: translateY(-1px);
+}
+
+.whatsapp-opt-btn {
+  background: hsla(142, 70%, 45%, 0.1);
+  border-color: hsla(142, 70%, 45%, 0.3);
+  color: #25d366 !important;
+}
+
+.whatsapp-opt-btn:hover {
+  background: hsla(142, 70%, 45%, 0.2);
+  border-color: #25d366;
 }
 
 /* ==========================================
